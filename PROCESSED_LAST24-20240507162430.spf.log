@@ -1,0 +1,54 @@
+2024-05-10 10:35:39,105 - SPFLib - 9700.12256 - ERROR - utils.Record_SPF - (SPFManager) - initSessionSettings - Failed Record_SPF : HTTPConnectionPool(host='dtdpathwebnlb.ch.intel.com', port=80): Read timed out. (read timeout=1)
+Traceback (most recent call last):
+  File "D:\Python-i39\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "D:\Python-i39\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "D:\Python-i39\lib\http\client.py", line 1371, in getresponse
+    response.begin()
+  File "D:\Python-i39\lib\http\client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "D:\Python-i39\lib\http\client.py", line 280, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "D:\Python-i39\lib\socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python-i39\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "D:\Python-i39\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "D:\Python-i39\lib\site-packages\urllib3\util\retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\Python-i39\lib\site-packages\urllib3\packages\six.py", line 770, in reraise
+    raise value
+  File "D:\Python-i39\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\Python-i39\lib\site-packages\urllib3\connectionpool.py", line 451, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "D:\Python-i39\lib\site-packages\urllib3\connectionpool.py", line 340, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='dtdpathwebnlb.ch.intel.com', port=80): Read timed out. (read timeout=1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ScriptHostTemp\225607769\SPFLib\SPFUtilities\utils.py", line 833, in Record_SPF
+    SPFLogSvc_Invoke(MyRMode, MyRecd_orig, MyInstance)
+  File "E:\ScriptHostTemp\225607769\SPFLib\SPFUtilities\utils.py", line 758, in SPFLogSvc_Invoke
+    requests.get(spfLogServiceURL, params={'dataInput' : json.dumps(dataInput)}, headers=headers, timeout=1)
+  File "D:\Python-i39\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "D:\Python-i39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python-i39\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python-i39\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\Python-i39\lib\site-packages\requests\adapters.py", line 578, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='dtdpathwebnlb.ch.intel.com', port=80): Read timed out. (read timeout=1)

@@ -1,0 +1,175 @@
+------------------------ Start of PreScripts --------------------------
+SCriptHost Farm: ScriptHost-ProdAT
+EntryID: 240413140
+Log: LAST24_LOTS\PROCESSED_LAST24-20240507162430.log
+JobDir: E:\ScriptHostJobs\240413140\
+TempDir: E:\ScriptHostTemp\240413140
+Drone: F21PVAP462N103
+Local DateTime: 2024 07 Oct 02:35:22
+GMT DateTime: 2024 07 Oct 08:35:22
+Script: LAST24_LOTS\processed_last24.zip
+
+------------------------- End of PreScripts ---------------------------
+
+Start Script: D:\Python-i39\python.exe "processed_last24.zip" /STARTDIR="%TEMP%"
+
+Starting RunSPF Py, v1.6a ... 2024-10-07 14:35:32.609515
+
+Start folder = E:/ScriptHostTemp/240413140
+Python Path  = D:\Python-i39\python.exe
+SPF EE Path  = E:\ScriptHostTemp\240413140
+Unzip  Path  = E:\ScriptHostTemp\240413140
+Zip to Run   = E:\ScriptHostJobs\240413140\LAST24_LOTS\processed_last24.zip
+
+Starting Extract Engine v2.2.8.1_VA30_168... 07-Oct-2024 14:35:35
+
+
+Step 1. Run Python script
+
+Starting the Python Applet, v2.2 ...
+
+2024/10/07;14:36:10.183;240413140;Logger::LogProcessInfo;INFO;Logger::LogProcessInfo:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;Process = {D:\Python-i39\python.exe}, Arguments = {\\SHUser-ProdAT.intel.com\SHProdATUser$\strautma\last24_lots\processed_last24.py}, PID = {7288}, LoggedOnUser = {AMR\strautma}, WorkingDirectory = {E:\ScriptHostTemp\240413140}, dotNETFWVersion = 4.5. Other = [python.exe {v4.8.60126.0308} {64-bit}]
+2024/10/07;14:36:10.183;240413140;UberUtility::LogAppDir;INFO;UberUtility::LogAppDir:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;Local app dir is [C:\Users\strautma\AppData\Local\Uber4.8] (Exists=True)
+2024/10/07;14:36:10.214;240413140;UberUtility::UpdateDataSourceMappingXml;INFO;UberUtility::UpdateDataSourceMappingXml:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;Targeting rule has been changed from hash [] to [090b58865c]...12 rules found.
+\\SHUser-ProdAT.intel.com\SHProdATUser$\strautma\last24_lots\processed_last24.py:50: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df_last24 = pd.read_sql(sql_last24, conn)
+2024/10/07;14:36:11.882;240413140;UniqeClientHelper::ConnectToUNIQE#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UniqeClientHelper::ConnectToUNIQE:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;No explicit Site specified
+2024/10/07;14:36:11.882;240413140;UNIQEAdapter::InitializeConfig#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UNIQEAdapter::InitializeConfig:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;Original site input [rf3pap420n1.rf3prod.mfg.intel.com;rf3pap420n2.rf3prod.mfg.intel.com;rf3pap420n3.rf3prod.mfg.intel.com;rf3pap420n4.rf3prod.mfg.intel.com;rf3pap420n5.rf3prod.mfg.intel.com;rf3pap420n6.rf3prod.mfg.intel.com;rf3pap420n7.rf3prod.mfg.intel.com] converted to [BEST;F21PAP420n3.f21prod.mfg.intel.com;F21PAP420n4.f21prod.mfg.intel.com;F21PAP420n5.f21prod.mfg.intel.com;F21PAP420n6.f21prod.mfg.intel.com].
+2024/10/07;14:36:11.882;240413140;UniqeClient::UniqeClient;INFO;UniqeClient::UniqeClient:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;ThreadPool Max: Original workerThreads=32767, completionPortThreads=1000, Updated workerThreads=32767, completionPortThreads=1200
+2024/10/07;14:36:11.882;240413140;UniqeClient::UniqeClient;INFO;UniqeClient::UniqeClient:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;ThreadPool Min: Original workerThreads=6, completionPortThreads=6, Updated workerThreads=30, completionPortThreads=30
+2024/10/07;14:36:11.882;240413140;UberUtility::GetTargetedServer#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberUtility::GetTargetedServer:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;No targeting rules matched...12 rules evaluated.
+2024/10/07;14:36:11.882;240413140;UniqeClient::GetBestSite#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UniqeClient::GetBestSite:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;Best site is [f21pap420n3.f21prod.mfg.intel.com;f21pap420n4.f21prod.mfg.intel.com;f21pap420n5.f21prod.mfg.intel.com;f21pap420n6.f21prod.mfg.intel.com] for datasources: F21_PROD_XEUS.
+2024/10/07;14:36:11.882;240413140;UniqeClient::GetNewProxy#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UniqeClient::GetNewProxy:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;Resolved original site [BEST;F21PAP420n3.f21prod.mfg.intel.com;F21PAP420n4.f21prod.mfg.intel.com;F21PAP420n5.f21prod.mfg.intel.com;F21PAP420n6.f21prod.mfg.intel.com] to [f21pap420n3.f21prod.mfg.intel.com;f21pap420n4.f21prod.mfg.intel.com;f21pap420n5.f21prod.mfg.intel.com;f21pap420n6.f21prod.mfg.intel.com] [ID=b0fe2086740ca87e].
+2024/10/07;14:36:11.898;240413140;UniqeClientPrivate::LoadBalance#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UniqeClientPrivate::LoadBalance:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-4;[,]TID:4;Ordering nodes took 0 ms [Fixed site list with 1 nodes {f21pap420n3.f21prod.mfg.intel.com;f21pap420n4.f21prod.mfg.intel.com;f21pap420n5.f21prod.mfg.intel.com;f21pap420n6.f21prod.mfg.intel.com} specified....top node is F21PROD4 with ActiveQueries = 5 and RoundTripTime = 17 ms which is 11466 seconds old]. Healthcheck data from F21PROD3 used which is 11467 seconds old.
+2024/10/07;14:36:12.173;240413140;Client::OpenClient#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;Client::OpenClient:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-4;[,]TID:4;Open client connection [858a50805c0b3081] [OpenTimeOut=20sec][url=net.tcp://f21pap420n4.f21prod.mfg.intel.com:8135/UniqeWCFService/NoRSKrb]
+2024/10/07;14:36:12.173;240413140;ConnectionManager::NewConnection#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;ConnectionManager::NewConnection:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-4;[,]TID:4;Added new connection with key [f21pap420n4.f21prod.mfg.intel.com:8135#amr\strautma] [ConnectionID=2b17d913c125ec6d]
+2024/10/07;14:36:12.173;240413140;UniqeClientPrivate::InitializeServer#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UniqeClientPrivate::InitializeServer:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-4;[,]TID:4;[python.exe {v4.8.60126.0308} {64-bit}] Client connect to [f21pap420n4.f21prod.mfg.intel.com] successful.
+2024/10/07;14:36:12.177;240413140;UniqeClientPrivate::PingServer#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UniqeClientPrivate::PingServer:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-4;[,]TID:4;Pinging server [f21pap420n4.f21prod.mfg.intel.com] took 15 ms. {Mode = READ, GetApplication = 12 ms with 5506 bytes returned, ServerHealthCheckInfo = 0 ms [45 seconds old], Total = 15 ms} [ConnectionID=2b17d913c125ec6d][UsageCount=1]
+2024/10/07;14:36:12.177;240413140;UniqeClientPrivate::GetConfigParams#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UniqeClientPrivate::GetConfigParams:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-4;[,]TID:4;Submitting job [303dc7ef-8d74-463a-b05c-b1ac630a4873] with 1 operations {F21_PROD_XEUS} with credentials IWA[AMR\strautma].
+2024/10/07;14:36:12.193;240413140;UniqeClientPrivate::ExecuteJobPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UniqeClientPrivate::ExecuteJobPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-4;[,]TID:4;303dc7ef-8d74-463a-b05c-b1ac630a4873: submitted job with 1 operations to [f21pap420n4.f21prod.mfg.intel.com] which took 302 ms.
+2024/10/07;14:36:18.621;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;Extracting 2094 rows and 19 columns from 524300 bytes
+2024/10/07;14:36:18.621;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0001] Obtained 2094 rows and 19 columns [524300 bytes].
+2024/10/07;14:36:21.163;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-6;[,]TID:6;Extracting 2238 rows and 19 columns from 524338 bytes
+2024/10/07;14:36:21.163;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0002] Obtained 2238 rows and 19 columns [524338 bytes].
+2024/10/07;14:36:21.179;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;Extracting 1350 rows and 19 columns from 524523 bytes
+2024/10/07;14:36:21.226;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0003] Obtained 1350 rows and 19 columns [524523 bytes].
+2024/10/07;14:36:24.698;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-6;[,]TID:6;Extracting 1257 rows and 19 columns from 524554 bytes
+2024/10/07;14:36:24.698;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0004] Obtained 1257 rows and 19 columns [524554 bytes].
+2024/10/07;14:36:30.343;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;Extracting 1296 rows and 19 columns from 524539 bytes
+2024/10/07;14:36:30.343;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0005] Obtained 1296 rows and 19 columns [524539 bytes].
+2024/10/07;14:36:30.374;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;Extracting 1639 rows and 19 columns from 524500 bytes
+2024/10/07;14:36:30.384;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0006] Obtained 1639 rows and 19 columns [524500 bytes].
+2024/10/07;14:36:34.316;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;Extracting 1445 rows and 19 columns from 524318 bytes
+2024/10/07;14:36:34.316;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0007] Obtained 1445 rows and 19 columns [524318 bytes].
+2024/10/07;14:36:34.332;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;Extracting 1430 rows and 19 columns from 524294 bytes
+2024/10/07;14:36:34.363;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0008] Obtained 1430 rows and 19 columns [524294 bytes].
+2024/10/07;14:36:37.116;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-6;[,]TID:6;Extracting 1416 rows and 19 columns from 524552 bytes
+2024/10/07;14:36:37.116;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0009] Obtained 1416 rows and 19 columns [524552 bytes].
+2024/10/07;14:36:37.151;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;Extracting 1532 rows and 19 columns from 524446 bytes
+2024/10/07;14:36:37.167;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0010] Obtained 1532 rows and 19 columns [524446 bytes].
+2024/10/07;14:36:39.492;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-6;[,]TID:6;Extracting 1958 rows and 19 columns from 524388 bytes
+2024/10/07;14:36:39.492;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0011] Obtained 1958 rows and 19 columns [524388 bytes].
+2024/10/07;14:36:39.524;240413140;DataConversion::GetObjectsFromBytes#303dc7ef-8d74-463a-b05c-b1ac630a4873:0;INFO;DataConversion::GetObjectsFromBytes:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;Extracting 2672 rows and 19 columns from 524137 bytes
+2024/10/07;14:36:39.572;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0012] Obtained 2672 rows and 19 columns [524137 bytes].
+2024/10/07;14:36:39.588;240413140;ConnectionManager::CloseClient#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;ConnectionManager::CloseClient:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;Closing connection with state [Opened] that is 27 seconds old with key [f21pap420n4.f21prod.mfg.intel.com:8135#amr\strautma] [ConnectionID=2b17d913c125ec6d][ConnectionUsageCount=1]
+2024/10/07;14:36:39.588;240413140;Client::CloseClient#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;Client::CloseClient:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;Close client connection [858a50805c0b3081] [Source=ConnectionManager][url=net.tcp://f21pap420n4.f21prod.mfg.intel.com:8135/UniqeWCFService/NoRSKrb]
+2024/10/07;14:36:39.588;240413140;UniqeClientPrivate::CloseProxy#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UniqeClientPrivate::CloseProxy:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;[python.exe {v4.8.60126.0308} {64-bit}] Close completed successfully (took 5 ms). [Called from OnJobCompleteEvent][ID=#000001][DataSources=F21_PROD_XEUS][ConnectionID=2b17d913c125ec6d]
+2024/10/07;14:36:39.588;240413140;UniqeClientPrivate::OnJobCompleteEvent#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UniqeClientPrivate::OnJobCompleteEvent:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-7;[,]TID:7;[python.exe {v4.8.60126.0308} {64-bit}] Job 303dc7ef-8d74-463a-b05c-b1ac630a4873 having 1 operations completed with status CompletedSuccessfully and took 27697 ms and returned 20327 rows and 19 columns and 6292889 bytes. DataSources=[F21_PROD_XEUS] [Server=f21pap420n4.f21prod.mfg.intel.com] [DataAccessor = DB2] [ServerFriendlyName = F21PROD4] [CompressedSize = 663728 bytes] [DBFirstRowTime = 6318 ms] [NumThreads = 1] [ConnectTime = 289 ms] [ReliableSessions = False] [Kerberos = True] [OAuth = False] [ActualDataSource = F21_PROD_DIS_LOCAL] [RunAsUserID = AMR\strautma] [ClientDispositionRule = ] [DispositionRule = OtherXeusToDISLocal] [#[DispositionRuleTag = Rule {OtherXeusToDISLocal:F21_PROD_XEUS=>F21_PROD_DIS_LOCAL} satisfied]#] [ConnectionID=2b17d913c125ec6d][InstanceID=b0fe2086740ca87e][PrivateInstanceID=#000001] {AuthMode = IWA[AMR\strautma]}
+2024/10/07;14:36:39.652;240413140;UberTable::GetNextChunk2DPrivate#303dc7ef-8d74-463a-b05c-b1ac630a4873;INFO;UberTable::GetNextChunk2DPrivate:4e450bc635be7b38-7288-1:4e450bc635be7b38-7288-1;[,]TID:1;[Table 1] [id=0013] Obtained 0 rows and 0 columns [0 bytes].
+        ENT_LOT ENT_OPERATION  ENTITY  PROCESSED_WAFER_COUNT LOT_ABORT_FLAG  \
+0      W4365690        182062  CAN609                   25.0              N   
+1022   W4390490        182062  CAN609                   25.0              N   
+1021   W4391800        182061  CAN609                   25.0              N   
+1020   W4390350        182062  CAN609                   25.0              N   
+1019   W4390210        182062  CAN609                   25.0              N   
+...         ...           ...     ...                    ...            ...   
+20260  W4059630        232211  UTX410                    8.0              N   
+20259  W4119760        232211  UTX410                    7.0              Y   
+20258  W4059630        232211  UTX410                    8.0              N   
+20267  W4189060        232206  UTX410                    8.0              N   
+20326  W412996A        232201  UTX410                    9.0              N   
+
+               RETICLE  LOT_ENTITY_PROCESS_DURATION ENT_LOT_PROCESS  \
+0                 None                        35.31          1227.1   
+1022              None                        34.43          1227.1   
+1021     8PM1CATSV0CA2                        37.44          1227.1   
+1020              None                        34.41          1227.1   
+1019              None                        31.30          1227.1   
+...                ...                          ...             ...   
+20260  9XMTRC--DSE0MA1                        91.21          1243.1   
+20259  9XMTRC--DSE0MA1                       253.73          1243.1   
+20258  9XMTRC--DSE0MA1                       271.34          1243.1   
+20267  9XMTRC--WPS0MA1                       118.95          1243.1   
+20326  9XDYBA--VSP1MA1                       104.99          1243.0   
+
+                            PRODUCT_DESCRIPTION     PRODUCT DOTPROCESS  \
+0                            Arrow Lake H682 A0  8PYHCV   A     1227.1   
+1022                         Arrow Lake P281 A0  8PYYCV   A     1227.1   
+1021                      METEOR LAKE-BASE-P281  8PM1CV   A     1227.1   
+1020                   Arrow Lake SH681 Base A0  8PA9CV   A     1227.1   
+1019                         Arrow Lake P281 A0  8PYYCV   A     1227.1   
+...                                         ...         ...        ...   
+20260     1243.1 R97 Montreal River Thin Epi TC  9XMTRV A C     1243.1   
+20259     1243.1 R97 Montreal River Thin Epi TC  9XMTRV A C     1243.1   
+20258     1243.1 R97 Montreal River Thin Epi TC  9XMTRV A C     1243.1   
+20267  1243.1 R97 Montreal River C2 Thin Epi TC  9XMTRV B C     1243.1   
+20326                       P1243.0 DayBreak A1  9XDYBV A A     1243.0   
+
+                                 ROUTE LOT_TYPE OPER_SHORT_DESC  \
+0                           FL27.1P8AT     PROD      V #27TSVED   
+1022                        FL27.1P8AX     PROD      V #27TSVED   
+1021                        FL27.1P8AZ     PROD      V #27TSVFL   
+1020                        FL27.1P8BF     PROD      V #27TSVED   
+1019                        FL27.1P8AX     PROD      V #27TSVED   
+...                                ...      ...             ...   
+20260   FL43.1E7AA_SNIP_WLP289804-1_55       TD      L #3DSESXD   
+20259   FL43.1E7AA_SNIP_WLP296035-1_29       TD      L #3DSESXD   
+20258   FL43.1E7AA_SNIP_WLP289804-1_55       TD      L #3DSESXD   
+20267   SE43.10GYW_SNIP_WLP306269-1_44       TD      L #3WPSSXD   
+20326  FL43.0E8AB_SNIP_WLP297287-19_22       TD      L #3VSPSXD   
+
+      CURRENT_HOTLOT                                         LOT_RECIPE  \
+0                  N               P22-C-420-EDCOT +   {TrackOnly=TRUE}   
+1022               N               P22-C-420-EDCOT +   {TrackOnly=TRUE}   
+1021               N  P22-L-420-3-C + ?/USER/M1CA/PM1CA_1_BFLX 8PM1C...   
+1020               N               P22-C-420-EDCOT +   {TrackOnly=TRUE}   
+1019               N               P22-C-420-EDCOT +   {TrackOnly=TRUE}   
+...              ...                                                ...   
+20260              N                                      P-L-THB-57-4B   
+20259              N  P-L-THB-57-4B $NA ?9XMTRC\9XDYBVA_DSE_RIB_DUAL...   
+20258              N                                      P-L-THB-57-4B   
+20267              N  P-L-THB-57-4A $NA ?9XMTRC\9XDYBVA_WPS_RIB_DUAL...   
+20326              N                                      P-L-THB-57-4A   
+
+      LAST_WAFER_END_DATE FIRST_WAFER_END_DATE  ENT_LOT_PRIORITY    WPH  \
+0     2024-09-07 14:51:51  2024-09-07 14:32:35               0.0   78.0   
+1022  2024-09-24 20:49:51  2024-09-24 20:30:56               0.0   79.0   
+1021  2024-09-24 20:35:58  2024-09-24 20:23:13               0.0  118.0   
+1020  2024-09-24 17:58:40  2024-09-24 17:39:11               0.0   77.0   
+1019  2024-09-24 17:15:26  2024-09-24 16:56:11               0.0   78.0   
+...                   ...                  ...               ...    ...   
+20260 2024-09-19 03:51:21  2024-09-19 03:36:55               0.0   33.0   
+20259 2024-09-18 10:26:22  2024-09-18 10:23:36               0.0  152.0   
+20258 2024-09-18 10:22:18  2024-09-18 10:05:19               0.0   30.0   
+20267 2024-09-24 00:44:22  2024-09-24 00:14:15               0.0   30.0   
+20326 2024-10-05 05:07:34  2024-10-05 04:55:03               0.0   43.0   
+
+                     HOUR           RECIPE     TECH  
+0     2024-09-07 15:00:00  P22-C-420-EDCOT  Foveros  
+1022  2024-09-24 21:00:00  P22-C-420-EDCOT  Foveros  
+1021  2024-09-24 21:00:00    P22-L-420-3-C  Foveros  
+1020  2024-09-24 18:00:00  P22-C-420-EDCOT  Foveros  
+1019  2024-09-24 18:00:00  P22-C-420-EDCOT  Foveros  
+...                   ...              ...      ...  
+20260 2024-09-19 04:00:00    P-L-THB-57-4B      SiP  
+20259 2024-09-18 11:00:00    P-L-THB-57-4B      SiP  
+20258 2024-09-18 11:00:00    P-L-THB-57-4B      SiP  
+20267 2024-09-24 01:00:00    P-L-THB-57-4A      SiP  
+20326 2024-10-05 06:00:00    P-L-THB-57-4A      SiP  
+
+[20327 rows x 23 columns]
+
+Done... 07-Oct-2024 14:37:00
+
+Done ... 2024-10-07 14:37:00.886671
+

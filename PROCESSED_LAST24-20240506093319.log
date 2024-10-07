@@ -1,0 +1,61 @@
+------------------------ Start of PreScripts --------------------------
+SCriptHost Farm: ScriptHost-ProdAT
+EntryID: 225343359
+Log: LAST24_LOTS\PROCESSED_LAST24-20240506093319.log
+JobDir: E:\ScriptHostJobs\225343359\
+TempDir: E:\ScriptHostTemp\225343359
+Drone: F21PVAP462N106
+Local DateTime: 2024 07 May 04:21:56
+GMT DateTime: 2024 07 May 10:21:56
+Script: LAST24_LOTS\processed_last24.zip
+
+------------------------- End of PreScripts ---------------------------
+
+Start Script: D:\Python-i39\python.exe "processed_last24.zip" /STARTDIR="%TEMP%"
+
+Starting RunSPF Py, v1.6a ... 2024-05-07 16:22:06.957362
+
+Start folder = E:/ScriptHostTemp/225343359
+Python Path  = D:\Python-i39\python.exe
+SPF EE Path  = E:\ScriptHostTemp\225343359
+Unzip  Path  = E:\ScriptHostTemp\225343359
+Zip to Run   = E:\ScriptHostJobs\225343359\LAST24_LOTS\processed_last24.zip
+
+Starting Extract Engine v2.2.8.1_VA30_168... 07-May-2024 16:22:09
+
+
+Step 1. Run Python script
+
+Starting the Python Applet, v2.2 ...
+
+2024/05/07;16:22:40.100;225343359;Logger::LogProcessInfo;INFO;Logger::LogProcessInfo:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;Process = {D:\Python-i39\python.exe}, Arguments = {\\shuser-prodat.intel.com\SHProdATUser$\strautma\last24_lots\processed_last24.py}, PID = {6844}, LoggedOnUser = {AMR\strautma}, WorkingDirectory = {E:\ScriptHostTemp\225343359}, dotNETFWVersion = 4.5. Other = [python.exe {v4.8.60126.0308} {64-bit}]
+2024/05/07;16:22:40.100;225343359;UberUtility::LogAppDir;INFO;UberUtility::LogAppDir:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;Local app dir is [C:\Users\strautma\AppData\Local\Uber4.8] (Exists=True)
+2024/05/07;16:22:40.116;225343359;UberUtility::UpdateDataSourceMappingXml;INFO;UberUtility::UpdateDataSourceMappingXml:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;Targeting rule has been changed from hash [] to [090b58865c]...12 rules found.
+\\shuser-prodat.intel.com\SHProdATUser$\strautma\last24_lots\processed_last24.py:48: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df_last24 = pd.read_sql(sql_last24, conn)
+2024/05/07;16:22:41.643;225343359;UniqeClientHelper::ConnectToUNIQE#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UniqeClientHelper::ConnectToUNIQE:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;No explicit Site specified
+2024/05/07;16:22:41.643;225343359;UNIQEAdapter::InitializeConfig#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UNIQEAdapter::InitializeConfig:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;Original site input [rf3pap420n1.rf3prod.mfg.intel.com;rf3pap420n2.rf3prod.mfg.intel.com;rf3pap420n3.rf3prod.mfg.intel.com;rf3pap420n4.rf3prod.mfg.intel.com;rf3pap420n5.rf3prod.mfg.intel.com;rf3pap420n6.rf3prod.mfg.intel.com;rf3pap420n7.rf3prod.mfg.intel.com] converted to [BEST;F21PAP420n3.f21prod.mfg.intel.com;F21PAP420n4.f21prod.mfg.intel.com;F21PAP420n5.f21prod.mfg.intel.com;F21PAP420n6.f21prod.mfg.intel.com].
+2024/05/07;16:22:41.643;225343359;UniqeClient::UniqeClient;INFO;UniqeClient::UniqeClient:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;ThreadPool Max: Original workerThreads=32767, completionPortThreads=1000, Updated workerThreads=32767, completionPortThreads=1200
+2024/05/07;16:22:41.643;225343359;UniqeClient::UniqeClient;INFO;UniqeClient::UniqeClient:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;ThreadPool Min: Original workerThreads=6, completionPortThreads=6, Updated workerThreads=30, completionPortThreads=30
+2024/05/07;16:22:41.643;225343359;UberUtility::GetTargetedServer#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UberUtility::GetTargetedServer:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;No targeting rules matched...12 rules evaluated.
+2024/05/07;16:22:41.643;225343359;UniqeClient::GetBestSite#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UniqeClient::GetBestSite:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;Best site is [f21pap420n3.f21prod.mfg.intel.com;f21pap420n4.f21prod.mfg.intel.com;f21pap420n5.f21prod.mfg.intel.com;f21pap420n6.f21prod.mfg.intel.com] for datasources: F21_PROD_XEUS.
+2024/05/07;16:22:41.643;225343359;UniqeClient::GetNewProxy#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UniqeClient::GetNewProxy:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;Resolved original site [BEST;F21PAP420n3.f21prod.mfg.intel.com;F21PAP420n4.f21prod.mfg.intel.com;F21PAP420n5.f21prod.mfg.intel.com;F21PAP420n6.f21prod.mfg.intel.com] to [f21pap420n3.f21prod.mfg.intel.com;f21pap420n4.f21prod.mfg.intel.com;f21pap420n5.f21prod.mfg.intel.com;f21pap420n6.f21prod.mfg.intel.com] [ID=7464633d80182361].
+2024/05/07;16:22:41.659;225343359;UniqeClientPrivate::LoadBalance#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UniqeClientPrivate::LoadBalance:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-4;[,]TID:4;Ordering nodes took 0 ms [Fixed site list with 1 nodes {f21pap420n3.f21prod.mfg.intel.com;f21pap420n4.f21prod.mfg.intel.com;f21pap420n5.f21prod.mfg.intel.com;f21pap420n6.f21prod.mfg.intel.com} specified....top node is F21PROD6 with ActiveQueries = 10 and RoundTripTime = 25 ms which is 1322 seconds old]. Healthcheck data from F21PROD4 used which is 1322 seconds old.
+2024/05/07;16:22:41.939;225343359;Client::OpenClient#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;Client::OpenClient:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-4;[,]TID:4;Open client connection [cd77bfd84fa9c0ff] [OpenTimeOut=20sec][url=net.tcp://f21pap420n6.f21prod.mfg.intel.com:8135/UniqeWCFService/NoRSKrb]
+2024/05/07;16:22:41.939;225343359;ConnectionManager::NewConnection#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;ConnectionManager::NewConnection:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-4;[,]TID:4;Added new connection with key [f21pap420n6.f21prod.mfg.intel.com:8135#amr\strautma] [ConnectionID=1d7ab3b40c648da5]
+2024/05/07;16:22:41.949;225343359;UniqeClientPrivate::InitializeServer#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UniqeClientPrivate::InitializeServer:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-4;[,]TID:4;[python.exe {v4.8.60126.0308} {64-bit}] Client connect to [f21pap420n6.f21prod.mfg.intel.com] successful.
+2024/05/07;16:22:41.959;225343359;UniqeClientPrivate::PingServer#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UniqeClientPrivate::PingServer:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-4;[,]TID:4;Pinging server [f21pap420n6.f21prod.mfg.intel.com] took 15 ms. {Mode = READ, GetApplication = 11 ms with 5562 bytes returned, ServerHealthCheckInfo = 0 ms [39 seconds old], Total = 14 ms} [ConnectionID=1d7ab3b40c648da5][UsageCount=1]
+2024/05/07;16:22:41.959;225343359;UniqeClientPrivate::GetConfigParams#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UniqeClientPrivate::GetConfigParams:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-4;[,]TID:4;Submitting job [77c6782b-9224-4d2a-a3b2-12edd302d102] with 1 operations {F21_PROD_XEUS} with credentials IWA[AMR\strautma].
+2024/05/07;16:22:41.969;225343359;UniqeClientPrivate::ExecuteJobPrivate#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UniqeClientPrivate::ExecuteJobPrivate:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-4;[,]TID:4;77c6782b-9224-4d2a-a3b2-12edd302d102: submitted job with 1 operations to [f21pap420n6.f21prod.mfg.intel.com] which took 311 ms.
+2024/05/07;16:22:44.595;225343359;DataConversion::GetObjectsFromBytes#77c6782b-9224-4d2a-a3b2-12edd302d102:0;INFO;DataConversion::GetObjectsFromBytes:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-6;[,]TID:6;Extracting 137 rows and 19 columns from 50039 bytes
+2024/05/07;16:22:44.610;225343359;UberTable::GetNextChunk2DPrivate#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UberTable::GetNextChunk2DPrivate:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;[Table 1] [id=0001] Obtained 137 rows and 19 columns [50039 bytes].
+2024/05/07;16:22:44.610;225343359;ConnectionManager::CloseClient#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;ConnectionManager::CloseClient:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-6;[,]TID:6;Closing connection with state [Opened] that is 2 seconds old with key [f21pap420n6.f21prod.mfg.intel.com:8135#amr\strautma] [ConnectionID=1d7ab3b40c648da5][ConnectionUsageCount=1]
+2024/05/07;16:22:44.610;225343359;Client::CloseClient#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;Client::CloseClient:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-6;[,]TID:6;Close client connection [cd77bfd84fa9c0ff] [Source=ConnectionManager][url=net.tcp://f21pap420n6.f21prod.mfg.intel.com:8135/UniqeWCFService/NoRSKrb]
+2024/05/07;16:22:44.610;225343359;UniqeClientPrivate::CloseProxy#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UniqeClientPrivate::CloseProxy:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-6;[,]TID:6;[python.exe {v4.8.60126.0308} {64-bit}] Close completed successfully (took 9 ms). [Called from OnJobCompleteEvent][ID=#000001][DataSources=F21_PROD_XEUS][ConnectionID=1d7ab3b40c648da5]
+2024/05/07;16:22:44.610;225343359;UniqeClientPrivate::OnJobCompleteEvent#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UniqeClientPrivate::OnJobCompleteEvent:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-6;[,]TID:6;[python.exe {v4.8.60126.0308} {64-bit}] Job 77c6782b-9224-4d2a-a3b2-12edd302d102 having 1 operations completed with status CompletedSuccessfully and took 2949 ms and returned 137 rows and 19 columns and 50039 bytes. DataSources=[F21_PROD_XEUS] [Server=f21pap420n6.f21prod.mfg.intel.com] [DataAccessor = DB2] [ServerFriendlyName = F21PROD6] [CompressedSize = 7595 bytes] [DBFirstRowTime = 2593 ms] [NumThreads = 1] [ConnectTime = 298 ms] [ReliableSessions = False] [Kerberos = True] [OAuth = False] [ActualDataSource = F21_PROD_DIS_LOCAL] [RunAsUserID = AMR\strautma] [ClientDispositionRule = ] [DispositionRule = OtherXeusToDISLocal] [#[DispositionRuleTag = Rule {OtherXeusToDISLocal:F21_PROD_XEUS=>F21_PROD_DIS_LOCAL} satisfied]#] [ConnectionID=1d7ab3b40c648da5][InstanceID=7464633d80182361][PrivateInstanceID=#000001] {AuthMode = IWA[AMR\strautma]}
+2024/05/07;16:22:44.626;225343359;UberTable::GetNextChunk2DPrivate#77c6782b-9224-4d2a-a3b2-12edd302d102;INFO;UberTable::GetNextChunk2DPrivate:27c9d0e6e30e6b75-6844-1:27c9d0e6e30e6b75-6844-1;[,]TID:1;[Table 1] [id=0002] Obtained 0 rows and 0 columns [0 bytes].
+
+Done... 07-May-2024 16:22:53
+
+Done ... 2024-05-07 16:22:54.033278
+
