@@ -7,6 +7,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 import plotly.io as pio
 import plotly.subplots as sp
+import os, glob
+
+# Define the directory path
+directory_path = '//f21pucnasn1.f21prod.mfg.intel.com/FuzionUploads/Litho/Tracks/dashLAST24/'
 
 sql_last24 = """
 SELECT 
@@ -89,11 +93,6 @@ df_last24['TECH'] = np.where(
     )
 )
 
-pd.set_option('display.max_columns', None)
-print(df_last24)
-
-#print(df_last24)
-
 # Define a color scale
 #color_scale = px.colors.qualitative.Plotly
 #color_mapping = {ent_lot: color for ent_lot, color in zip(df_last24['ENT_LOT'].unique(), color_scale)}
@@ -104,8 +103,10 @@ df_last24['RECIPE_NUM'] = df_last24['RECIPE'].astype('category').cat.codes
 # Create a dropdown menu with options for each unique entity
 dropdown = [{'label': entity, 'method': 'update', 'args': [{'visible': [entity == unique_entity for unique_entity in df_last24['ENTITY'].unique()]}]} for entity in df_last24['ENTITY'].unique()]
 
-one_day_ago = datetime.now() - timedelta(days=1)
-df_detailed = df_last24[df_last24['FIRST_WAFER_END_DATE'] >= one_day_ago]
+#one_day_ago = datetime.now() - timedelta(days=1)
+#df_detailed = df_last24[df_last24['FIRST_WAFER_END_DATE'] >= one_day_ago]
+df_detailed = df_last24.copy()
+
 # Create a bar for each unique entity
 fig = go.Figure(data=[go.Bar(
     x=df_detailed[df_detailed['ENTITY'] == entity]['HOUR'], 
@@ -158,8 +159,15 @@ title = f'Last 24 hours - Script Ran at: {now_str}'
 fig.update_layout(title=title)
 fig.update_layout(yaxis_title='Wafers Processed')
 
+# remove any files that exist in the directory to avoid write permissions and/or huge accumulated file sizes
+# Find all files in the directory
+files = glob.glob(os.path.join(directory_path, '*'))
+# Remove each file
+for file in files:
+    os.remove(file)
+
 # Write the figure to an HTML file
-fig.write_html(f'//f21pucnasn1.f21prod.mfg.intel.com/FuzionUploads/Litho/Tracks/dashLAST24/chart_of_lots_processed_last_1d_detailed.html')
+fig.write_html(os.path.join(directory_path, 'bar_chart_of_lots_processed_detailed_with_dd.html'))
 
 
 ''' Create a table with filterable columns'''
@@ -171,7 +179,7 @@ columns.append('LOT_RECIPE')
 
 # Sort the DataFrame by 'LAST_WAFER_END_DATE' in descending order
 df_last24 = df_last24.sort_values('LAST_WAFER_END_DATE', ascending=False)
-df_last24.to_excel('//f21pucnasn1.f21prod.mfg.intel.com/FuzionUploads/Litho/Tracks/dashLAST24/table_of_lots_processed_last_30d_detailed.xlsx', index=False)
+df_last24.to_excel(os.path.join(directory_path, 'xls_table_of_lots_processed_detailed.xlsx'), index=False)
 
 html_table_time_period = datetime.now() - timedelta(days=14)  # Take last 2 weeks of data for html table
 filtered_df = df_last24[df_last24['LAST_WAFER_END_DATE'] >= html_table_time_period]
@@ -217,7 +225,7 @@ headers.forEach(function(header, index) {
 html_table += javascript
 
 # Write the HTML table to a file
-with open(f'//f21pucnasn1.f21prod.mfg.intel.com/FuzionUploads/Litho/Tracks/dashLAST24/table_of_lots_processed_last_14d_detailed.html', 'w') as f:
+with open(os.path.join(directory_path, 'table_of_lots_processed_last_14d_detailed.html'), 'w') as f:
     f.write(html_table)
 
 # Filter data for the last 24 hours
@@ -261,7 +269,7 @@ fig2.update_layout(showlegend=True)
 fig2_html = fig2.to_html(full_html=False)
 
 # Write the HTML table to a file with utf-8 encoding
-with open('//f21pucnasn1.f21prod.mfg.intel.com/FuzionUploads/Litho/Tracks/dashLAST24/chart_of_moves_last_1d.html', 'a', encoding='utf-8') as f:
+with open(os.path.join(directory_path, 'chart_of_litho_moves_last_1d_by_tool_by_tech.html'), 'a', encoding='utf-8') as f:
     f.write(fig2_html)
 
 # Calculate or round down LAST_WAFER_END_DATE to create a new column called DAY
@@ -311,5 +319,5 @@ fig3.update_layout(showlegend=False)
 fig3_html = fig3.to_html(full_html=False)
 
 # Write the HTML table to a file with utf-8 encoding
-with open('//f21pucnasn1.f21prod.mfg.intel.com/FuzionUploads/Litho/Tracks/dashLAST24/chart_of_daily_moves_last_30d.html', 'a', encoding='utf-8') as f:
+with open(os.path.join(directory_path, 'bar_chart_of_daily_moves_per_tool_with_dd.html'), 'w', encoding='utf-8') as f:
     f.write(fig3_html)
